@@ -1,0 +1,240 @@
+/* ===========================================
+   KE BARBEARIA - Navbar Component
+   =========================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-fixed);
+    padding: var(--space-4) var(--space-6);
+    transition: background-color var(--transition-base), padding var(--transition-base);
+}
+
+.navbar--scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: var(--space-3) var(--space-6);
+    box-shadow: var(--shadow-md);
+}
+
+.navbar__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__mobile-logo {
+    display: none;
+}
+
+/* Logo */
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.navbar__logo img {
+    height: 50px;
+    width: auto;
+    transition: transform var(--transition-base);
+}
+
+.navbar__logo:hover img {
+    transform: scale(1.05);
+}
+
+.navbar__logo-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    letter-spacing: 0.1em;
+}
+
+/* Navigation menu */
+.navbar__menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.navbar__link {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    padding: var(--space-2) 0;
+    position: relative;
+    transition: color var(--transition-fast);
+}
+
+.navbar__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width var(--transition-base);
+}
+
+.navbar__link:hover {
+    color: var(--color-accent);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+    width: 100%;
+}
+
+.navbar__link--active {
+    color: var(--color-accent);
+}
+
+/* CTA Button */
+.navbar__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    background-color: var(--color-accent);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.navbar__cta:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+    color: var(--color-text-primary);
+}
+
+/* Mobile menu toggle */
+.navbar__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.navbar__toggle-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text-primary);
+    transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.navbar__toggle--active .navbar__toggle-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.navbar__toggle--active .navbar__toggle-line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__toggle--active .navbar__toggle-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navbar__toggle {
+        display: flex;
+    }
+
+    .navbar__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: var(--color-bg-secondary);
+        flex-direction: column;
+        justify-content: flex-start;
+        /* Changed from center to allow top spacing */
+        gap: var(--space-6);
+        padding: var(--space-8);
+        padding-top: var(--space-12);
+        /* Add space at top */
+        transition: right var(--transition-base);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+        /* Allow scrolling if needed */
+    }
+
+    .navbar__mobile-logo {
+        display: block;
+        margin-bottom: var(--space-4);
+        text-align: center;
+    }
+
+    .navbar__mobile-logo img {
+        height: 80px;
+        width: auto;
+    }
+
+    .navbar__menu--open {
+        right: 0;
+    }
+
+    .navbar__links {
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+
+    .navbar__link {
+        font-size: var(--text-lg);
+    }
+
+    .navbar__cta {
+        padding: var(--space-3);
+        /* Smaller padding for icon-only or compact */
+    }
+}
+
+/* Overlay for mobile menu */
+.navbar__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+    z-index: calc(var(--z-fixed) - 1);
+}
+
+.navbar__overlay--visible {
+    opacity: 1;
+    visibility: visible;
+}

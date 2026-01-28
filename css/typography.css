@@ -1,0 +1,164 @@
+/* ===========================================
+   KE BARBEARIA - Typography
+   =========================================== */
+
+/* Google Fonts import handled in HTML for performance */
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: var(--font-normal);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-black);
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+h1 {
+    font-size: clamp(3.75rem, 12vw, 11rem);
+    /* Min ~60px, Max ~176px */
+}
+
+h2 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    /* Min ~48px, Max ~96px */
+}
+
+h3 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* Min ~32px, Max ~64px */
+}
+
+h4 {
+    font-size: var(--text-2xl);
+}
+
+/* Subheadings */
+.subheading {
+    font-family: var(--font-subheading);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Body text */
+p {
+    margin-bottom: var(--space-4);
+    color: var(--color-text-muted);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links */
+a {
+    color: var(--color-text-primary);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* Text utilities */
+.text-accent {
+    color: var(--color-accent);
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Price styling */
+.price {
+    font-family: var(--font-subheading);
+    font-weight: var(--font-bold);
+    color: var(--color-accent);
+    font-size: clamp(2rem, 4vw, 3rem);
+    /* 32px - 48px */
+    text-transform: uppercase;
+}
+
+/* Section titles */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: var(--space-8);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+}
+
+.section-title--center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Lead text */
+.lead {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+/* Small text */
+.small {
+    font-size: var(--text-sm);
+}
+
+/* Font weight utilities */
+.font-normal {
+    font-weight: var(--font-normal);
+}
+
+.font-medium {
+    font-weight: var(--font-medium);
+}
+
+.font-semibold {
+    font-weight: var(--font-semibold);
+}
+
+.font-bold {
+    font-weight: var(--font-bold);
+}
+
+.font-black {
+    font-weight: var(--font-black);
+}

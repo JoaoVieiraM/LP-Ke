@@ -1,0 +1,102 @@
+/* ===========================================
+   KE BARBEARIA - Design System Variables
+   =========================================== */
+
+:root {
+    /* Colors */
+    --color-bg-primary: #0A0A0A;
+    --color-bg-secondary: #111111;
+    --color-bg-tertiary: #151515;
+    --color-bg-card: #1C1C1C;
+
+    --color-accent: #FF6200;
+    --color-accent-hover: #FF7A1A;
+    --color-accent-glow: rgba(255, 98, 0, 0.3);
+
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #F8F8F8;
+    --color-text-muted: #CCCCCC;
+    --color-text-dark: #444444;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', 'Cinzel', Georgia, serif;
+    --font-subheading: 'Bebas Neue', 'Montserrat', sans-serif;
+    --font-body: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Font Sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+    --text-5xl: 3rem;
+    --text-6xl: 4rem;
+    --text-7xl: 5rem;
+    --text-8xl: 6rem;
+    --text-hero: clamp(3rem, 10vw, 10rem);
+
+    /* Font Weights */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-black: 900;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+
+    /* Layout */
+    --container-max: 1400px;
+    --container-padding: 1.5rem;
+    --section-padding: clamp(4rem, 10vw, 8rem);
+
+    /* Borders */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-accent: 0 0 30px var(--color-accent-glow);
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+    --transition-slow: 500ms ease;
+    --transition-slower: 800ms ease;
+
+    /* Z-Index */
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+    --z-popover: 500;
+    --z-tooltip: 600;
+}
+
+/* Breakpoint reference (use in media queries):
+   - Mobile: < 480px
+   - Tablet: 480px - 768px
+   - Desktop small: 768px - 1024px
+   - Desktop: 1024px - 1280px
+   - Desktop large: > 1280px
+*/
